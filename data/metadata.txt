@@ -1,0 +1,52 @@
+Project title: Evaluating the sensitivity of forest structural diversity characterization to LiDAR point density 
+Authors:
+Elizabeth A. LaRue (ealarue@utep.edu), Robert Fahey, Tabatha L. Fuson, Jane R. Foster, Jaclyn Hatala Matthes, Brady S. Hardiman
+
+The three csv files contain data/results:
+
+neon_plots_centers4232021.csv - lists the plot centroids and corresponding las tile from neon_las_tiles - relevant columns used in r code include.
+	siteID - NEON site
+        plotID - site_xxx of each baseplot
+	easting	- easting of plot centroid
+	northing - northing of plot centroid
+	utmZone - UTM Zone
+
+
+density_FSD_08172021.csv - FSD metrics for each site x plot x density x replicate. 
+	filename - lidar file name in the form of density_replicate_plotID	
+	plotID	- neon base plot
+	density - simulated density category	
+	replicate - replicate 1 through 5	
+	site - neon site	
+	plot_area_ground - area of the base plot (m2)	
+	den - actual density of the lidar point cloud	pt/m2
+	maxZ - maximum height (m)
+	rumple - rumple
+	deepgap.fraction - deep gap fraction 	
+	mean.max.canopy.ht - mean outer canopy height (m) (MOCH)
+	max.canopy.ht - maximum canopy height (m)
+	top.rugosity - top rugosity (m)
+	vert.sd	- standard deviation of height (m)
+	sd.sd - standard deviation of standard deviation of height of voxels (m)
+	GFP - gap fraction profile
+	VAI - vegetation area index (m2/m3)
+	VCI -vertical complexity index
+	vertCV - coefficient of variation of height
+	q0 - 0 quantile of height
+	q25 - 25th quantile of height
+	q50 - 50th quantile of height
+	q75 - 75th quantile of height
+	q100 - 100 quantile of height
+	fhd - foliage height diveristy
+	gini - gini coefficient
+	lai - leaf area index
+	lai_supcanopy - lai below 5 m
+
+regression_FSD_08222021.csv - results of segmented regressions.
+	segmented_site - neon site that plot came from
+	FSDmetric - one of 16 FSD metrics	
+	pscore_pvalue - pvalue from pscore test	
+	initial_psi - initial density break point estimate (always 8)
+	breakpoint - density breakpoint 
+	breakpointSE - break point standard error	
+	FDR_padjust - pvalue from pscore test adjusted for multiple tests (112) with false discovery rate. 
