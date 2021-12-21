@@ -1,0 +1,24 @@
+Project title: Evaluating the sensitivity of forest structural diversity characterization to LiDAR point density 
+Authors:
+Elizabeth A. LaRue (ealarue@utep.edu), Robert Fahey, Tabatha L. Fuson, Jane R. Foster, Jaclyn Hatala Matthes, Brady S. Hardiman
+
+Code from LaRue et al. is provided here so that the compiled data, Tables, Figures, and Supplemental Information can be 
+generated from provided code in R version 3.6.3. 
+
+Seven .R files are run in sequential order as indicated by 00, 01, 02, 03, 04, 05, 06: 
+
+00_neonUtilities.R - Download aerial LiDAR data from NEON for the 9 plots selected at each of 5 different sites.
+
+01_process_NEON_lidar_.R - Processes the raw level 1 LiDAR downloaded from NEON website by clipping to plot size, removing
+outliers, and correcting for elevation. Intermediate files are listed in the code annotations and stored in the data folder.
+
+02_simulated_density.R - Randomly simulates a specified point density from processed baseplot LiDAR clips. 
+
+03_FSD_metrics_loop.R - A for loop to calculate 16 FSD metrics highlighted in the manuscript analyses from the lidR and leafR packages. Creates the metrics table density_FSD_08172021.csv used in analyses and figures. A separate file density_FSD_08172021.csv was created in excel for NMS multivariate analyses (Fig. 4) in PCORD run by R. Fahey. 
+
+04_fig1.R - Generates figure 1. 
+
+05_fig2_3.R - Generates figure 2 and 3 plots of FSD metrics across LiDAR point densities. 
+
+06_table3_S1.R - Runs segmented regression analyses on each plot by metric combination, which is shown in
+Table 2 and the Appendix Table S1.
